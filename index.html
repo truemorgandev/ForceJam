@@ -5,13 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FORCEJAM - Tactical Multitool</title>
 <style>
-  /* Сброс и базовые стили */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
   body, html {
     height: 100%;
-    overflow: hidden; /* Запретить скролл страницы */
+    overflow: hidden;
     font-family: 'Rajdhani', sans-serif;
     background-color: #0a0f0d;
     color: #00ffd0;
@@ -26,68 +25,78 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,255,208,0.3);
   }
   nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.8rem;
   }
   nav ul li a, nav ul li button {
     color: #00ffd0;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.25s ease;
   }
-  nav ul li button:hover,
-  nav ul li a:hover {
-    text-decoration: underline;
+  nav ul li a:hover,
+  nav ul li button:hover {
+    background-color: #004d4a;
+    text-decoration: none;
   }
 
   section {
     height: 100vh;
-    padding: 80px 40px 40px 40px; /* Отступ сверху под навигацию */
+    padding: 100px 40px 40px 40px; /* увеличенный отступ сверху под меню */
     overflow-y: auto;
     scroll-behavior: smooth;
   }
 
   h1, h2 {
     font-family: 'Orbitron', sans-serif;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
   h1 {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
   }
   h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 1.8rem;
   }
   p, li {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
     max-width: 900px;
   }
   ul {
     max-width: 900px;
     margin-left: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
   li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
   }
 
   .donate-button {
     display: inline-block;
     background-color: #00ffd0;
     color: #0a0f0d;
-    padding: 1rem 2rem;
+    padding: 1.1rem 2.2rem;
     font-weight: bold;
     border-radius: 10px;
     text-decoration: none;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  .donate-button:hover {
+    background-color: #00cca0;
   }
 
   footer {
@@ -115,44 +124,50 @@
   <h1>FORCEJAM</h1>
   <p><strong>Tactical Multitool for the Ukrainian Armed Forces.</strong></p>
   <p>FORCEJAM is a compact, modular device designed to detect, jam FPV drones, and enable secure encrypted communication on the battlefield. Our mission is to empower frontline soldiers with affordable and reliable electronic warfare tools to save lives and improve coordination.</p>
+  <p>The project focuses on accessibility and modularity, allowing continuous updates and improvements to meet evolving threats and tactical needs. FORCEJAM is not just a jammer—it is a comprehensive protective and communication platform tailored for real combat conditions.</p>
 </section>
 
 <section id="about" tabindex="0">
   <h2>About FORCEJAM</h2>
-  <p>In modern warfare, drone surveillance and attacks present a serious threat to ground forces. FORCEJAM was developed to counter this threat by actively monitoring key radio frequencies used by FPV drones, alerting soldiers to incoming reconnaissance, and disrupting hostile drones through targeted jamming.</p>
-  <p>Furthermore, the device offers encrypted messaging capabilities using AES-256, allowing frontline units to communicate securely over radio frequencies without relying on unstable or compromised cellular networks.</p>
-  <p>This open and modular project aims to be accessible, cost-effective, and adaptable to evolving battlefield needs.</p>
+  <p>In modern warfare, drone surveillance and attacks present a serious threat to ground forces. FPV drones, often used for reconnaissance or targeted strikes, can undermine troop safety and mission success.</p>
+  <p>FORCEJAM was developed to counter this threat by actively monitoring key radio frequencies (433MHz, 868MHz, and 2.4GHz) commonly used by FPV drones. Upon detecting suspicious signals, the device alerts soldiers in real-time, allowing them to take appropriate defensive actions.</p>
+  <p>Beyond detection, FORCEJAM can disrupt hostile drone operation by jamming signals on selected frequencies using powerful RF modules with optional amplifiers for extended range. This gives frontline units an active defense tool against unmanned aerial threats.</p>
+  <p>Communication is equally vital. The device enables encrypted radio messaging using AES-256, ensuring that frontline fighters can securely coordinate without reliance on cellular or internet networks vulnerable to interception or outages.</p>
+  <p>This open-source, modular project is committed to empowering defenders with state-of-the-art tools that are cost-effective and adaptable to the rapidly evolving battlefield landscape.</p>
 </section>
 
 <section id="features" tabindex="0">
   <h2>Features</h2>
   <ul>
-    <li><strong>Multi-band RF monitoring:</strong> Real-time scanning of 433MHz, 868MHz, and 2.4GHz bands to detect FPV drone signals.</li>
-    <li><strong>Drone jamming:</strong> Manual activation of jamming signals on specific frequencies using high-performance RF modules with optional signal amplifiers for extended range.</li>
-    <li><strong>Encrypted messaging:</strong> AES-256 based secure communication allowing message transmission over radio channels offline, bypassing internet and cellular networks.</li>
-    <li><strong>User interface:</strong> Responsive 4-inch color touchscreen with on-screen keyboard for ease of use in the field.</li>
-    <li><strong>Access control:</strong> Two-factor authentication using NFC cards for device access and message encryption/decryption.</li>
-    <li><strong>Modular hardware:</strong> Designed for future expansions, including GPS integration and 5.8GHz frequency support.</li>
+    <li><strong>Multi-band RF monitoring:</strong> FORCEJAM continuously scans the 433MHz, 868MHz, and 2.4GHz frequency bands, the most common ranges for FPV drone communications. Real-time signal visualization and automatic alerts keep soldiers aware of potential threats.</li>
+    <li><strong>Drone jamming:</strong> The device offers manual jamming control on selected frequencies, employing three nRF24L01+ PA/LNA and two CC1101 transceivers. Optional external signal amplifiers extend jamming range, providing flexible response options depending on tactical needs.</li>
+    <li><strong>Encrypted communication:</strong> Using AES-256 encryption, FORCEJAM allows secure, offline radio messaging between soldiers. Messages have configurable time-to-live to prevent replay attacks and ensure operational security.</li>
+    <li><strong>User interface:</strong> A responsive 4-inch full-color touchscreen provides intuitive control with an on-screen keyboard optimized for field use, including message input and navigation.</li>
+    <li><strong>Access security:</strong> Two-factor authentication using NFC cards restricts device access and governs encryption and decryption rights, ensuring only authorized personnel operate the device and access sensitive communications.</li>
+    <li><strong>Modular hardware design:</strong> FORCEJAM's architecture supports future expansions such as GPS integration and 5.8GHz frequency band support, ensuring long-term adaptability and relevance.</li>
   </ul>
 </section>
 
 <section id="hardware" tabindex="0">
   <h2>Hardware Specifications</h2>
-  <p>The core processing is handled by an ESP32 microcontroller, providing the balance of power efficiency and wireless capabilities needed for this mission-critical device.</p>
-  <p>Communication is facilitated by three nRF24L01+ PA/LNA modules and two CC1101 transceivers, covering the main frequency bands of interest (433MHz, 868MHz, and 2.4GHz).</p>
-  <p>The user interacts with the device through a 4-inch full-color touchscreen, designed for outdoor visibility and responsive control.</p>
-  <p>Power is supplied by a rechargeable Li-Po battery, ensuring portability and reliable operation in field conditions. Additional signal amplifiers can be connected to extend jamming range.</p>
+  <p>The device is powered by the ESP32 microcontroller, a balance of performance and low power consumption suitable for portable field devices. This chip handles signal processing, user interface management, and encryption tasks efficiently.</p>
+  <p>Communication hardware includes three nRF24L01+ PA/LNA modules and two CC1101 transceivers, which cover the primary frequencies of interest (433MHz, 868MHz, and 2.4GHz). This setup enables simultaneous monitoring and jamming capabilities.</p>
+  <p>A 4-inch color touchscreen display allows easy interaction even in outdoor environments, with high visibility and responsive controls.</p>
+  <p>FORCEJAM is powered by a rechargeable Li-Po battery providing several hours of continuous operation. The design supports attaching external signal amplifiers to boost jamming power and range when required.</p>
+  <p>Robust enclosure and modular design make the device suitable for rugged battlefield conditions, ensuring durability and ease of maintenance or upgrade.</p>
 </section>
 
 <section id="donate" tabindex="0">
   <h2>Support the Project</h2>
-  <p>Your donations help us manufacture and distribute FORCEJAM devices to the Ukrainian defenders on the frontlines. Every contribution makes a difference.</p>
+  <p>Your donations directly fund production and distribution of FORCEJAM units to Ukrainian soldiers defending the homeland. Contributions help us keep the project affordable and accessible, saving lives and improving frontline coordination.</p>
+  <p>Every donation counts — together we make a difference on the battlefield.</p>
   <a href="https://send.monobank.ua/jar/3539Mi8MFT" class="donate-button" target="_blank" rel="noopener noreferrer">💰 Donate via Monobank</a>
 </section>
 
 <section id="contact" tabindex="0">
   <h2>Contact</h2>
-  <p>Telegram: <a href="https://t.me/truemorgan" target="_blank" rel="noopener noreferrer">@truemorgan</a></p>
+  <p>For inquiries, collaboration, or support, reach out on Telegram:</p>
+  <p><a href="https://t.me/truemorgan" target="_blank" rel="noopener noreferrer">@truemorgan</a></p>
 </section>
 
 <footer>
