@@ -1,0 +1,82 @@
+
+body {
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #0a0f0d;
+  color: #00ffd0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #071411;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  color: #00ffd0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li a, #lang-toggle {
+  color: #00ffd0;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.gallery-img {
+  max-width: 100%;
+  cursor: pointer;
+  border: 2px solid #00ffd0;
+  border-radius: 5px;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.donate-button {
+  display: inline-block;
+  background-color: #00ffd0;
+  color: #0a0f0d;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #071411;
+}
