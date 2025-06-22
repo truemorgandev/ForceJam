@@ -1,176 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FORCEJAM - Tactical Multitool</title>
-  <meta name="description" content="FORCEJAM is a tactical multitool designed for the Ukrainian Armed Forces to detect and jam FPV drones and enable encrypted communication." />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FORCEJAM - Tactical Multitool</title>
+<style>
+  /* Сброс и базовые стили */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    overflow: hidden; /* Запретить скролл страницы */
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #0a0f0d;
+    color: #00ffd0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: #071411;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  nav ul li a, nav ul li button {
+    color: #00ffd0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  nav ul li button:hover,
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    height: 100vh;
+    padding: 80px 40px 40px 40px; /* Отступ сверху под навигацию */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  p, li {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    max-width: 900px;
+  }
+  ul {
+    max-width: 900px;
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  li {
+    margin-bottom: 0.8rem;
+  }
+
+  .donate-button {
+    display: inline-block;
+    background-color: #00ffd0;
+    color: #0a0f0d;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+
+  footer {
+    background-color: #071411;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">FORCEJAM</div>
-      <ul class="nav-links">
-        <li><a href="#home" data-i18n="home">Home</a></li>
-        <li><a href="#about" data-i18n="about">About</a></li>
-        <li><a href="#features" data-i18n="features">Features</a></li>
-        <li><a href="#hardware" data-i18n="hardware">Hardware</a></li>
-        <li><a href="#donate" data-i18n="donate">Donate</a></li>
-        <li><a href="#contact" data-i18n="contact">Contact</a></li>
-        <li><button id="lang-toggle">🇬🇧</button></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home" class="section">
-      <h1 data-i18n="home_title">FORCEJAM</h1>
-      <p data-i18n="home_subtitle">Tactical Multitool for the Ukrainian Armed Forces</p>
-    </section>
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#hardware">Hardware</a></li>
+    <li><a href="#donate">Donate</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <section id="about" class="section">
-      <h2 data-i18n="about">About</h2>
-      <p data-i18n="about_p1">
-        FORCEJAM is a compact and affordable tactical device designed to enhance the safety and communication efficiency of Ukrainian frontline units. It detects enemy FPV drones by scanning key radio frequencies and can jam hostile signals to protect soldiers on the ground.
-      </p>
-      <p data-i18n="about_p2">
-        Additionally, FORCEJAM enables encrypted radio communication between fighters without relying on cellular networks or the internet, ensuring secure and reliable messaging under battlefield conditions.
-      </p>
-      <p data-i18n="about_p3">
-        Our mission is to provide accessible electronic warfare tools that save lives and improve operational coordination in the field.
-      </p>
-    </section>
+<section id="home" tabindex="0">
+  <h1>FORCEJAM</h1>
+  <p><strong>Tactical Multitool for the Ukrainian Armed Forces.</strong></p>
+  <p>FORCEJAM is a compact, modular device designed to detect, jam FPV drones, and enable secure encrypted communication on the battlefield. Our mission is to empower frontline soldiers with affordable and reliable electronic warfare tools to save lives and improve coordination.</p>
+</section>
 
-    <section id="features" class="section">
-      <h2 data-i18n="features">Features</h2>
-      <ul>
-        <li data-i18n="f1">
-          Real-time monitoring of radio frequencies: 433MHz, 868MHz, and 2.4GHz to detect FPV drone signals.
-        </li>
-        <li data-i18n="f2">
-          Manual activation of drone jamming on selected frequencies using powerful RF modules with optional signal amplifiers for extended range.
-        </li>
-        <li data-i18n="f3">
-          Secure encrypted messaging with AES-256 protocol, allowing fighters to communicate safely over radio channels without internet.
-        </li>
-        <li data-i18n="f4">
-          User-friendly touchscreen interface with on-screen keyboard for message input.
-        </li>
-        <li data-i18n="f5">
-          Two-factor authentication via NFC cards to secure device access and message encryption/decryption.
-        </li>
-        <li data-i18n="f6">
-          Modular hardware design with plans for future GPS integration and 5.8GHz frequency support.
-        </li>
-      </ul>
-    </section>
+<section id="about" tabindex="0">
+  <h2>About FORCEJAM</h2>
+  <p>In modern warfare, drone surveillance and attacks present a serious threat to ground forces. FORCEJAM was developed to counter this threat by actively monitoring key radio frequencies used by FPV drones, alerting soldiers to incoming reconnaissance, and disrupting hostile drones through targeted jamming.</p>
+  <p>Furthermore, the device offers encrypted messaging capabilities using AES-256, allowing frontline units to communicate securely over radio frequencies without relying on unstable or compromised cellular networks.</p>
+  <p>This open and modular project aims to be accessible, cost-effective, and adaptable to evolving battlefield needs.</p>
+</section>
 
-    <section id="hardware" class="section">
-      <h2 data-i18n="hardware">Hardware</h2>
-      <p data-i18n="hardware_p1">
-        The core of FORCEJAM is built on the versatile ESP32 microcontroller, chosen for its processing power and integrated wireless capabilities.
-      </p>
-      <p data-i18n="hardware_p2">
-        Communication modules include three nRF24L01+ PA/LNA units and two CC1101 transceivers covering 433MHz and 868MHz bands. The device features a 4-inch color touchscreen for easy operation.
-      </p>
-      <p data-i18n="hardware_p3">
-        Power is supplied by a rechargeable Li-Po battery, ensuring portability and reliability in the field. Additional signal amplifiers can be connected to increase jamming range.
-      </p>
-    </section>
+<section id="features" tabindex="0">
+  <h2>Features</h2>
+  <ul>
+    <li><strong>Multi-band RF monitoring:</strong> Real-time scanning of 433MHz, 868MHz, and 2.4GHz bands to detect FPV drone signals.</li>
+    <li><strong>Drone jamming:</strong> Manual activation of jamming signals on specific frequencies using high-performance RF modules with optional signal amplifiers for extended range.</li>
+    <li><strong>Encrypted messaging:</strong> AES-256 based secure communication allowing message transmission over radio channels offline, bypassing internet and cellular networks.</li>
+    <li><strong>User interface:</strong> Responsive 4-inch color touchscreen with on-screen keyboard for ease of use in the field.</li>
+    <li><strong>Access control:</strong> Two-factor authentication using NFC cards for device access and message encryption/decryption.</li>
+    <li><strong>Modular hardware:</strong> Designed for future expansions, including GPS integration and 5.8GHz frequency support.</li>
+  </ul>
+</section>
 
-    <section id="donate" class="section">
-      <h2 data-i18n="donate">Support the Project</h2>
-      <p data-i18n="donate_text">
-        Help us deliver FORCEJAM devices to those who need them most. Your contribution directly supports the safety and effectiveness of Ukrainian defenders.
-      </p>
-      <a href="https://send.monobank.ua/jar/3539Mi8MFT" class="donate-button" target="_blank">💰 Donate via Monobank</a>
-    </section>
+<section id="hardware" tabindex="0">
+  <h2>Hardware Specifications</h2>
+  <p>The core processing is handled by an ESP32 microcontroller, providing the balance of power efficiency and wireless capabilities needed for this mission-critical device.</p>
+  <p>Communication is facilitated by three nRF24L01+ PA/LNA modules and two CC1101 transceivers, covering the main frequency bands of interest (433MHz, 868MHz, and 2.4GHz).</p>
+  <p>The user interacts with the device through a 4-inch full-color touchscreen, designed for outdoor visibility and responsive control.</p>
+  <p>Power is supplied by a rechargeable Li-Po battery, ensuring portability and reliable operation in field conditions. Additional signal amplifiers can be connected to extend jamming range.</p>
+</section>
 
-    <section id="contact" class="section">
-      <h2 data-i18n="contact">Contact</h2>
-      <p>
-        Telegram: <a href="https://t.me/truemorgan" target="_blank">@truemorgan</a>
-      </p>
-    </section>
-  </main>
+<section id="donate" tabindex="0">
+  <h2>Support the Project</h2>
+  <p>Your donations help us manufacture and distribute FORCEJAM devices to the Ukrainian defenders on the frontlines. Every contribution makes a difference.</p>
+  <a href="https://send.monobank.ua/jar/3539Mi8MFT" class="donate-button" target="_blank" rel="noopener noreferrer">💰 Donate via Monobank</a>
+</section>
 
-  <footer>
-    <p>&copy; 2025 FORCEJAM Project. Made for 🇺🇦 Ukraine.</p>
-  </footer>
+<section id="contact" tabindex="0">
+  <h2>Contact</h2>
+  <p>Telegram: <a href="https://t.me/truemorgan" target="_blank" rel="noopener noreferrer">@truemorgan</a></p>
+</section>
 
-  <script>
-    const translations = {
-      ua: {
-        home: "Головна",
-        about: "Про проект",
-        features: "Функції",
-        hardware: "Обладнання",
-        donate: "Підтримати",
-        contact: "Контакти",
-        home_title: "FORCEJAM",
-        home_subtitle: "Тактичний мультитул для ЗСУ",
-        about_p1: "FORCEJAM — компактний і доступний тактичний пристрій, створений для підвищення безпеки та ефективності зв’язку українських підрозділів на передовій. Він виявляє ворожі FPV-дрони шляхом сканування ключових радіочастот та може глушити сигнали супротивника для захисту бійців на місцях.",
-        about_p2: "Додатково, FORCEJAM дозволяє зашифровану радіозв’язок між бійцями без використання мобільних мереж чи інтернету, забезпечуючи надійну та безпечну передачу повідомлень в умовах бойових дій.",
-        about_p3: "Наша місія — забезпечити доступні інструменти електронної війни, які рятують життя та покращують координацію операцій на фронті.",
-        f1: "Моніторинг радіочастот в режимі реального часу: 433MHz, 868MHz та 2.4GHz для виявлення сигналів FPV-дронів.",
-        f2: "Ручне глушіння дронів на вибраних частотах за допомогою потужних RF-модулів з опціональними підсилювачами сигналу для розширення дальності.",
-        f3: "Безпечні зашифровані повідомлення з використанням протоколу AES-256, що дозволяє бійцям спілкуватися по радіоканалах без інтернету.",
-        f4: "Зручний сенсорний інтерфейс із екранною клавіатурою для введення повідомлень.",
-        f5: "Двофакторна автентифікація через NFC-картки для захисту доступу до пристрою та шифрування/дешифрування повідомлень.",
-        f6: "Модульна апаратна конструкція з планами на інтеграцію GPS та підтримку 5.8GHz в майбутньому.",
-        hardware_p1: "Ядром FORCEJAM є універсальний мікроконтролер ESP32, обраний за його потужність та вбудовані бездротові можливості.",
-        hardware_p2: "Модулі зв’язку включають три nRF24L01+ PA/LNA та два CC1101 для діапазонів 433MHz та 868MHz. Пристрій оснащений 4-дюймовим кольоровим сенсорним дисплеєм для зручної роботи.",
-        hardware_p3: "Живлення забезпечується акумулятором Li-Po, що підлягає перезарядці, що гарантує портативність та надійність у польових умовах. Для збільшення дальності глушіння можна підключати додаткові підсилювачі сигналу.",
-        donate_text: "Допоможіть нам доставити пристрої FORCEJAM тим, хто найбільше їх потребує. Ваш внесок безпосередньо підтримує безпеку та ефективність українських захисників.",
-      },
-      en: {
-        home: "Home",
-        about: "About",
-        features: "Features",
-        hardware: "Hardware",
-        donate: "Donate",
-        contact: "Contact",
-        home_title: "FORCEJAM",
-        home_subtitle: "Tactical Multitool for the Ukrainian Armed Forces",
-        about_p1: "FORCEJAM is a compact and affordable tactical device designed to enhance the safety and communication efficiency of Ukrainian frontline units. It detects enemy FPV drones by scanning key radio frequencies and can jam hostile signals to protect soldiers on the ground.",
-        about_p2: "Additionally, FORCEJAM enables encrypted radio communication between fighters without relying on cellular networks or the internet, ensuring secure and reliable messaging under battlefield conditions.",
-        about_p3: "Our mission is to provide accessible electronic warfare tools that save lives and improve operational coordination in the field.",
-        f1: "Real-time monitoring of radio frequencies: 433MHz, 868MHz, and 2.4GHz to detect FPV drone signals.",
-        f2: "Manual activation of drone jamming on selected frequencies using powerful RF modules with optional signal amplifiers for extended range.",
-        f3: "Secure encrypted messaging with AES-256 protocol, allowing fighters to communicate safely over radio channels without internet.",
-        f4: "User-friendly touchscreen interface with on-screen keyboard for message input.",
-        f5: "Two-factor authentication via NFC cards to secure device access and message encryption/decryption.",
-        f6: "Modular hardware design with plans for future GPS integration and 5.8GHz frequency support.",
-        hardware_p1: "The core of FORCEJAM is built on the versatile ESP32 microcontroller, chosen for its processing power and integrated wireless capabilities.",
-        hardware_p2: "Communication modules include three nRF24L01+ PA/LNA units and two CC1101 transceivers covering 433MHz and 868MHz bands. The device features a 4-inch color touchscreen for easy operation.",
-        hardware_p3: "Power is supplied by a rechargeable Li-Po battery, ensuring portability and reliability in the field. Additional signal amplifiers can be connected to increase jamming range.",
-        donate_text: "Help us deliver FORCEJAM devices to those who need them most. Your contribution directly supports the safety and effectiveness of Ukrainian defenders.",
-      }
-    };
+<footer>
+  <p>&copy; 2025 FORCEJAM Project. Made for 🇺🇦 Ukraine.</p>
+</footer>
 
-    const langToggle = document.getElementById('lang-toggle');
-
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      langToggle.textContent = lang === 'en' ? '🇬🇧' : '🇺🇦';
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-    }
-
-    langToggle.addEventListener('click', () => {
-      const newLang = document.documentElement.lang === 'en' ? 'ua' : 'en';
-      setLanguage(newLang);
+<script>
+  // Smooth scroll on nav links click
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
     });
+  });
+</script>
 
-    // Set default language on load
-    setLanguage('en');
-  </script>
 </body>
 </html>
